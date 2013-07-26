@@ -259,19 +259,56 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{Systematic Errors}{Fit Bias}
-	Generate Toy MC with ??? (long) / 13000 events an parameters derived from nominal fit (except $\SJPsi = 0.75$)
+	\begin{frame}{Systematic errors}{Fit Bias}
+	Generate Toy MC with 
+	\begin{itemize}
+	\item ??? (long) resp. 13000 events (downstream)
+	\item $\SJPsi = 0.75$
+	\item all other parameters derived from nominal fit
+	\item $\SJPsi$, $\tau$, $\Delta m_d$ floating
+	\end{itemize}
+    \end{frame}	
+	
+	\begin{frame}{Systematic errors}{Fit Bias}
 	\begin{columns}
 	\column{0.5\textwidth}
 	\begin{block}{Long Tracks}
-	%\includegraphics[width=\textwidth]{pulls_s_lt}
+	\centering
+	%\includegraphics[width=\textwidth]{pulls_s_lt}	
 	\end{block}
 	\column{0.5\textwidth}
 	\begin{block}{Downstream Tracks}
-	%\includegraphics[width=\textwidth]{pulls_s_ds}
+	\centering
+	\includegraphics[width=0.8\textwidth]{fit_bias_ds}
 	\end{block}
 	\end{columns}
 	\end{frame}
+	
+	\begin{frame}{Systematic errors}{Fit Bias}
+	Multiply mean $\mu$ of pull distribution with statistical uncertainty of nominal fit.
+	\begin{columns}
+	\column{0.5\textwidth}
+	\begin{block}{Long Tracks}
+    \centering
+        $\delta\SJPsi^{\text{Fit}} = xxx$
+    \end{block}
+    	\column{0.5\textwidth}
+	\begin{block}{Downstream Tracks}
+    \centering
+        $\delta\SJPsi^{\text{Fit}} = 0.0047$
+    \end{block}
+    \end{columns}
+    \end{frame}
+	
+	\begin{frame}{Systematic errors}{Fit Bias - origins}
+    \begin{itemize}
+    \item too small pull width: background
+    \item major contribution to bias: statistics
+    \end{itemize}
+    \begin{center}
+    \includegraphics[width = 0.7\textwidth]{fit_bias_statistics}
+    \end{center}
+    \end{frame}
 	
 	\begin{frame}{Systematic errors}{Tagging calibration}
 	Vary Tagging calibration parameters $p_0, p_1$ $\pm$ their systematic uncertainties
@@ -291,7 +328,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	Choose highest difference from nominal fit / toy as estimate for the systematic uncertainty
 	\begin{itemize}
 	\item Long tracks:
-	\item Downstream tracks:
+	\item Downstream tracks: $\delta\SJPsi^{\text{TagCalib}} = 0.095$
     \end{itemize}		    
     \begin{alert}{Note:}
     Estimates very large due to large $\delta p_0^{stat.}$, $\delta p_1^{stat.}$ compared to other calibrations (systematic studies of calibration need to be finished)
@@ -333,7 +370,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 
 \begin{frame}{Systematic errors}{Time acceptance}
 \begin{block}{Downstream Tracks}
-%\includegraphics[width=\textwidth]{time_acceptance_fit_ds}
+\includegraphics[width=\textwidth]{time_acceptance_fit_ds}
 \end{block}
 \end{frame}
 
@@ -344,9 +381,9 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 \hline \hline 
 parameter & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{long} \\ \hline
 $\tau$    & & &  1.519   & 0.007 \\
-$a$       & & &  44.1    & 5.7 \\
-$b$       & & &  -7.4    & 1.1 \\
-$\beta$   & & &  -0.0056 & 0.0085 \\ 
+$a$       & & &  52.8    & 8.6 \\
+$b$       & & &  -9.2    & 1.6 \\
+$\beta$   & & &  -0.0053 & 0.0089 \\ 
 \hline \hline
 \end{tabular}
 \end{table}
@@ -359,19 +396,48 @@ Toy MC Study
 \item use parameters mentioned above
 \item fit without acceptance function
 \end{itemize}
-%\includegraphics[width=\textwidth]{time_acceptance_toys}
-\begin{center}
-No significant difference to fit bias! \\
-$\mu_{fit} = 0.059 \pm 0.007 \quad \text{vs.} \quad \mu_{acc} = 0.063 \pm 0.007$
-\end{center}
+
+
 \end{frame}
 
 \begin{frame}{Systematic errors}{Correlation mass $\leftrightarrow$ decay time}
+Fit reconstructed \Bd-mass in different time bins:
+\begin{enumerate}
+\item $t \in [0.3, 0.7] \pico\second$
+\item $t \in [0.7, 1.5] \pico\second$
+\item $t \in [1.5, 3] \pico\second$
+\item $t \in [3, 14] \pico\second$
+\end{enumerate}
+Subsequently, fix mass values to the values obtained in the 4 bins and fit the whole sample. Choose highest difference of $\SJPsi$ as estimate.
+\begin{center}
+\begin{tabular}{c r@{$\pm$}l r@{$\pm$}l}
+\hline \hline
+Bin & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{down} \\ \hline
+1 & & & 0.559 & 0.069 \\
+2 & & & 0.567 & 0.068 \\
+3 & & & 0.566 & 0.069 \\
+4 & & & 0.566 & 0.069 \\ \hline
+nominal fit & & & 0.565 & 0.069 \\ \hline
+$\delta\SJPsi^{\text{mass/t}}$ & \multicolumn{2}{c}{xxx} & \multicolumn{2}{c}{0.006} \\
 
+\hline \hline
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}{Systematic errors}{Resolution}
-
+Vary $\sigma_i$ of resolution $\pm 20\%$, fit with these parameters and compare $\SJPsi$
+\begin{center}
+\begin{tabular}{c r@{$\pm$}l r@{$\pm$}l}
+\hline \hline
+ & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{down} \\ \hline
+$+20\%$ & & & 0.565 & 0.069 \\
+$-20\%$ & & & 0.564 & 0.069 \\ \hline
+nominal fit & & & 0.565 & 0.069 \\ \hline
+$\delta\SJPsi^{\text{resolution}}$ & \multicolumn{2}{c}{xxx} & \multicolumn{2}{c}{0.001} \\
+\hline \hline
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}{Systematic errors}{Summary}
@@ -379,11 +445,11 @@ $\mu_{fit} = 0.059 \pm 0.007 \quad \text{vs.} \quad \mu_{acc} = 0.063 \pm 0.007$
 \begin{tabular}{l c c}
 \hline \hline
 effect & long & downstream \\ \hline
-fit  method & & \\
-tagging calibration & & \\
-time acceptance & & \\
-mass $\leftrightarrow$ decay time & & \\
-resolution & & \\ \hline
+fit  method & & 0.005\\
+tagging calibration & & 0.095\\
+time acceptance & & ???\\
+mass $\leftrightarrow$ decay time & & 0.006 \\
+resolution & & 0.001 \\ \hline
 total & & \\
 \hline \hline
 \end{tabular}
@@ -391,9 +457,7 @@ total & & \\
 
 \end{frame}
 
-\begin{frame}{Conclusion}
 
-\end{frame}
 
 % Backup-Folien
 % =============
