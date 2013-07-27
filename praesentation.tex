@@ -34,7 +34,7 @@
 \subtitle[]{}
 \author[Johannes Mayer, Patrick Fahner]{Johannes Mayer, Patrick Fahner}
 \institute[]{LHCb, Physikalisches Institut \\ Heidelberg University}
-\date[27.05.13]{27. Mai 2013}
+\date[29/07/13]{29/07/2013}
 \subject{}
 \keywords{}
 
@@ -76,6 +76,24 @@
 	\end{columns}
 	\end{frame}
 	
+	\begin{frame}{Basis of our work}
+	Basis: 2011 LHCb analysis (LHCb-ANA-2012-016)
+	\begin{itemize}
+	    \item data collected 2011
+	    \item $\sqrt{s} = 7\tera\electronvolt$
+	    \item $1.025 \mathrm{fb}^{-1}$
+	    \item result: $\SJPsi = 0.72 \pm 0.06 \text{(stat.)} \pm 0.04 \text{(syst.)}$
+	\end{itemize}
+	
+	Our data:
+	\begin{itemize}
+	    \item only 2012 data
+	    \item $\sqrt{s} = 8\tera\electronvolt$
+	    \item $\approx 2 \mathrm{fb}^{-1}$
+   	    \item separation into long and downstream tracks
+	\end{itemize}
+	\end{frame}
+	
 	\begin{frame}{LHCb-detector}
 	\begin{center}
 	\includegraphics[width = 0.6\textwidth]{detector}
@@ -90,21 +108,11 @@
 	
 	
 	\begin{frame}{Cuts}
-	\begin{center}
-	\begin{tabular}{l|c|c}
-	& Long Tracks & Downstream Tracks \\ \hline \hline
-	candidates & 10842 & 57153 \\ \hline
-	S/B & 18.0 & 4.0\\ \hline 
-	cuts & & \\
-	$\frac{\chi^2_{Track}}{nDof}(\mu)$ & $< 2.5$ & $< 3$ \\
-	$p_T(K_s^0)$ & $> 1000$ MeV & --- \\
-	$\frac{\chi^2_{Track}}{nDof}(\pi)$ & $< 1.5$ & $< 3$ \\
-	$\frac{\tau}{\sigma_{\tau}}(K_s^0)$ & $> 15$ & $> 5$ \\
-	decay length sig. $(K_s^0)$ & $> 25$ & $> 5$ \\
-	$|M(\pi^+\pi^-)-M(K_s^0)|$ & $< 7$ MeV & $< 22$ MeV \\
-	\end{tabular}	
-	\end{center}
-	New in 2012: Ghost probability. We choose ghost prob $<0.5$.
+    \begin{itemize}
+    \item in general took from 2011 analysis
+    \item analysis on detached and biased trigger line
+	\item New in 2012: Ghost probability. We choose ghost prob $<0.5$ for $\pi$ and $\mu$ tracks.
+	\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Fit strategy}
@@ -112,22 +120,31 @@
 	\item Unbinned Maximum Likelihood Fit
 	\item sFit: Maximise modified likelihood function
 	\begin{align}
-	test
+	\mathcal{L}_W(\vec{\lambda}) = \prod_{i=1}^N \mathcal{P}(\vec{x_e};\vec{\lambda})^{W_s(y_e)}
 	\end{align}
-	\item sWeigths calculated with sPlot-technique
-	\end{itemize}
+	\item sWeigths $W_s(y_e)$ calculated with sPlot-technique
+	\item total decay time p.d.f.
 	\begin{align}
-	\mathcal{P}_{meas} = \underbrace{\epsilon(t)}_{= 1, \text{later more}}\mathcal{P}_{sig}(t') \otimes \mathcal{R}(t-t')
+	\mathcal{P}_{meas} = \underbrace{\epsilon(t)}_{= 1,\ \text{later more}}\mathcal{P}_{sig}(t') \otimes \mathcal{R}(t-t')
 	\end{align}
+	\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Mean dacay time resolution}
-	Resolution model
+	\begin{itemize}
+    \item hardly any effect on $\SJPsi$ expected
+	\item Resolution model
 	\begin{align}
 	\mathcal{R}(t) = \sum_{i=0}^3 \frac{f_i}{2\pi\sigma_i}e^{-\tfrac{t^2}{2\sigma^2}}
 	\end{align}
-	Perform sFit with reonstructed $J/\Psi$ mass as discriminating variable
+	\item Use prescaled trigger line
+	\item apply all cuts except lifetime cut
+	\item Perform sFit with reonstructed $J/\Psi$ mass as discriminating variable
+	\item fit only negative decay times (unphysical, explainable only with resolution effects)
+	\end{itemize}
 	\end{frame}
+	
+	
 	\begin{frame}{Mean dacay time resolution}
 		\begin{columns}
 	\column{0.5\textwidth}
@@ -141,7 +158,7 @@
 	\end{columns}
 	\end{frame}
 
-    \begin{frame}{Resolution}
+    \begin{frame}{Mean decay time resolution}{Fit results}
     \begin{center}
     $\begin{array}{l | r@{\pm}l | r@{\pm}l}
 \hline 
@@ -160,12 +177,13 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\begin{frame}{nominal fit}{mass fit - parameterisation}
 	\begin{block}{Signal}
 	\begin{align}
-\mathcal{P}_{m;S}(m;\vec{\lambda}_{m;S}) = f_{S,m}\mathcal{G}(m;m_{\text{\Bd}},\sigma_{m,1}) + \mathcal{G}(m;m_{\text{\Bd}},\sigma_{m,2})
+\nonumber \mathcal{P}_{m;S}(m;\vec{\lambda}_{m;S}) = &f_{S,m}\mathcal{G}(m;m_{\text{\Bd}},\sigma_{m,1}) + \\
+&(1-f_{S,m})\mathcal{G}(m;m_{\text{\Bd}},\sigma_{m,2})
 \end{align}
 \end{block}
 \begin{block}{Background}
 \begin{align}
-\mathcal{P}_{m;B}(m;\vec{\lambda}_{m;B}) = \frac{1}{\mathcal{N}_{m;B}}e^{-\alpha_m m}
+\mathcal{P}_{m;B}(m;\vec{\lambda}_{m;B}) = e^{-\alpha_m m}/\mathcal{N}_{m;B}
 \end{align}
 \end{block}
 \begin{block}{Total mass p.d.f.}
@@ -188,7 +206,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\end{columns}
 	\end{frame}
 	
-	\begin{frame}{nominal fit}{Probability density function}
+	\begin{frame}{nominal fit}{decay time distribution - probability density function}
 	\begin{align}
 \nonumber\mathcal{P}_{\text{meas}}(t, d, \omega) \propto &e^{-t/\tau} \left\lbrace 1-d\mu(1-2\omega)-d\Delta p_0 \right. \\
 &- \left.\left[d(1-2\omega)-\mu(1-d\Delta p_0)\right]\SJPsi\sin(\Delta m_d t)\right\rbrace
@@ -199,7 +217,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 		\item $\mu = A_P = \frac{R_{\bar{B}_d^0}-R_{B_d^0}}{R_{\bar{B}_d^0}+R_{B_d^0}}$ production asymmetry
 		\item $\omega$: calibrated mistag probability
 		      \begin{align}
-		      (\eta^{OS}) = p_1 (\eta^{OS} - \left\langle \eta^{OS} \right\rangle) + p_0
+		      \omega(\eta^{OS}) = p_1 (\eta^{OS} - \left\langle \eta^{OS} \right\rangle) + p_0
 		      \end{align}
 		      $p_0, p_1$: calibration parameters \\
 		      $\eta^{OS}$: predicted mistag probability
@@ -216,6 +234,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 		\item floating parameters: $S_{J/\Psi K_s^0}$, $\tau$, $\Delta m_d$
 		\item constrained parameters: $\mu = -0.015\pm0.013$, $p_0 = 0.382\pm0.003$, $p_1=0.981\pm0.024$, $\Delta p_0 = 0.0045\pm0.0053$
 		\item fixed parameters: $\left\langle \eta^{OS} \right\rangle = 0.382$, resolution parameters
+		\item total events: ??? (long) // 12689 (downstream)
 		\item signal events: ??? (long) // 8585 (downstream) [2011: 8600 total]
 	\end{itemize}
 	\end{frame}
@@ -236,11 +255,14 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\end{frame}
 	
 	\begin{frame}{fit results}
+	\begin{alert}{Note:}
+	Both results of $\SJPsi$ are blinded with the same string.
+	\end{alert}
 	\begin{center}
 	$\begin{array}{l r@{\pm}l r@{\pm}l}
 	\hline \hline
-	Parameter & \multicolumn{2}{c}{\text{long}} & \multicolumn{2}{c}{\text{downstream}} \\ \hline
-	\SJPsi     & & & 0.565 & 0.069 \\
+	\text{Parameter} & \multicolumn{2}{c}{\text{long}} & \multicolumn{2}{c}{\text{downstream}}\\ \hline
+	\SJPsi (\text{blinded})    & & & 0.565 & 0.069 \\
 	\tau       & & & 1.516 & 0.039 \\
 	\Delta m_d & & & 0.521 & 0.039 \\
 	\hline
@@ -285,6 +307,23 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\end{frame}
 	
 	\begin{frame}{Systematic errors}{Fit Bias}
+	Results of the toys:
+	\begin{columns}
+	\column{0.5\textwidth}
+	\begin{block}{Long Tracks}
+    \centering
+       
+    \end{block}
+    	\column{0.5\textwidth}
+	\begin{block}{Downstream Tracks}
+    
+        $\mu_{\SJPsi} = 0.7548 \pm 0.0005$
+        $\sigma_{\SJPsi} = 0.0672 \pm 0.0003$
+        $\mu_{\text{pull}} = 0.068 \pm 0.007$
+        $\sigma_{\text{pull}} = 0.946 \pm 0.005$
+    \end{block}
+    \end{columns}
+	\vspace{0.5cm} 
 	Multiply mean $\mu$ of pull distribution with statistical uncertainty of nominal fit.
 	\begin{columns}
 	\column{0.5\textwidth}
@@ -341,7 +380,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
     \end{alert}
     \begin{block}{Determination of an acceptance function}
     \begin{itemize}
-    \item no separation between \Bd and \Bdbar \\
+    \item no separation between \Bd \ and \Bdbar \\
           $\Rightarrow$ simple exponential decay
     \item neglect lifetime cut ($t > 0.3\text{ps}$)
     \item contributions to acceptance:
@@ -370,7 +409,8 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 
 \begin{frame}{Systematic errors}{Time acceptance}
 \begin{block}{Downstream Tracks}
-\includegraphics[width=\textwidth]{time_acceptance_fit_ds}
+\centering
+\includegraphics[width=0.85\textwidth]{time_acceptance_fit_ds}
 \end{block}
 \end{frame}
 
@@ -395,30 +435,39 @@ Toy MC Study
 \item generate with acceptance function 
 \item use parameters mentioned above
 \item fit without acceptance function
+\item compare mean of $\SJPsi$ distribution with cooresponding mean of fit bias toy
 \end{itemize}
+
+Assignment of systematic error due to neglect of any time acceptance:
+	\begin{columns}
+	\column{0.5\textwidth}
+	\begin{block}{Long Tracks}
+    \centering
+        $\delta\SJPsi^{\text{Acc}} = xxx$
+    \end{block}
+    	\column{0.5\textwidth}
+	\begin{block}{Downstream Tracks}
+    \centering
+        $\delta\SJPsi^{\text{Acc}} = 0.0013$
+    \end{block}
+    \end{columns}
 
 
 \end{frame}
 
 \begin{frame}{Systematic errors}{Correlation mass $\leftrightarrow$ decay time}
-Fit reconstructed \Bd-mass in different time bins:
-\begin{enumerate}
-\item $t \in [0.3, 0.7] \pico\second$
-\item $t \in [0.7, 1.5] \pico\second$
-\item $t \in [1.5, 3] \pico\second$
-\item $t \in [3, 14] \pico\second$
-\end{enumerate}
-Subsequently, fix mass values to the values obtained in the 4 bins and fit the whole sample. Choose highest difference of $\SJPsi$ as estimate.
+Fit reconstructed \Bd-mass in different time bins. Subsequently, fix mass values to the values obtained in the 4 bins and fit the whole sample. Choose highest difference of $\SJPsi$ as estimate.
 \begin{center}
-\begin{tabular}{c r@{$\pm$}l r@{$\pm$}l}
+\begin{tabular}{c l r@{$\pm$}l r@{$\pm$}l}
 \hline \hline
-Bin & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{down} \\ \hline
-1 & & & 0.559 & 0.069 \\
-2 & & & 0.567 & 0.068 \\
-3 & & & 0.566 & 0.069 \\
-4 & & & 0.566 & 0.069 \\ \hline
-nominal fit & & & 0.565 & 0.069 \\ \hline
-$\delta\SJPsi^{\text{mass/t}}$ & \multicolumn{2}{c}{xxx} & \multicolumn{2}{c}{0.006} \\
+Bin & time range of mass fit & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{down} \\ \hline
+1 & $t \in [0.3, 0.7] \pico\second$ & & & 0.559 & 0.069 \\
+2 & $t \in [0.7, 1.5] \pico\second$ & & & 0.567 & 0.068 \\
+3 & $t \in [1.5, 3] \pico\second$ & & & 0.566 & 0.069 \\
+4 & $t \in [3, 14] \pico\second$ & & & 0.566 & 0.069 \\ \hline
+\multicolumn{2}{l}{weighted average}  & & & 0.565 & 0.034 \\ \hline
+\multicolumn{2}{l}{nominal fit}  & & & 0.565 & 0.069 \\ \hline
+\multicolumn{2}{l}{$\delta\SJPsi^{\text{mass/t}}$} & \multicolumn{2}{c}{xxx} & \multicolumn{2}{c}{???} \\
 
 \hline \hline
 \end{tabular}
@@ -445,16 +494,49 @@ $\delta\SJPsi^{\text{resolution}}$ & \multicolumn{2}{c}{xxx} & \multicolumn{2}{c
 \begin{tabular}{l c c}
 \hline \hline
 effect & long & downstream \\ \hline
-fit  method & & 0.005\\
-tagging calibration & & 0.095\\
-time acceptance & & ???\\
-mass $\leftrightarrow$ decay time & & 0.006 \\
+fit  method & & 0.0047\\
+tagging calibration & & 0.0952\\
+time acceptance & & 0.0013\\
+mass $\leftrightarrow$ decay time & & ??? \\
 resolution & & 0.001 \\ \hline
-total & & \\
+total & & xxx \\
 \hline \hline
 \end{tabular}
 \end{center}
+\end{frame}
 
+\begin{frame}{Conclusion}
+	\begin{columns}
+	\column{0.5\textwidth}
+	\begin{block}{Long Tracks}
+	\centering
+	%\includegraphics[width=\textwidth]{asymmetry_lt}	
+	\end{block}
+	$\SJPsi = xxx \pm xxx (\text{stat.}) \pm xxx (\text{syst.})$
+	\column{0.5\textwidth}
+	\begin{block}{Downstream Tracks}
+	\centering
+	\includegraphics[width=\textwidth]{asymmetry_ds}
+	\end{block}
+	$\SJPsi = 0.565 \pm 0.069 (\text{stat.}) \pm xxx (\text{syst.})$
+	\end{columns}
+    \begin{center}
+    Both results are blinded with the same string
+    \end{center}
+\end{frame}
+
+\begin{frame}{Conclusion}{Comparison with other results}
+\begin{center}
+\begin{tabular}{l r@{$\pm$}l}
+\hline \hline
+& \multicolumn{2}{c}{$\SJPsi$} \\ \hline
+long tracks (blinded) & & \\
+downstream tracks (blinded) & 0.565 & 0.069 \\ \hline
+2011 analysis & 0.72 & 0.06 \\
+world average & 0.679 & 0.020 \\
+BaBar (most precise) & 0.687 & 0.028 \\ \hline \hline
+\end{tabular}
+\end{center}
 \end{frame}
 
 
