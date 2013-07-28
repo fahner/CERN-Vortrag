@@ -44,13 +44,11 @@
 	\titlepage
 	\end{frame}
 	
-	\begin{frame}{Decay $B_d^0 \longrightarrow J/\Psi K_s^0$}
-	\includegraphics[width=\textwidth]{Decay}
+	\begin{frame}{Decay $B_d^0 \longrightarrow J/\Psi K_s^0$ and $B_d^0-\bar{B}_d^0$-Mixing}
+	\includegraphics[width=0.5\textwidth]{Decay}
+	\includegraphics[width=0.5\textwidth]{Mixing}
 	\end{frame}
-	
-	\begin{frame}{$B_d^0-\bar{B}_d^0$-Mixing}
-	\includegraphics[width=\textwidth]{Mixing}
-	\end{frame}
+
 	
 	\begin{frame}{Time-dependent asymmetry}
 	\begin{align}
@@ -83,6 +81,7 @@
 	    \item $\sqrt{s} = 7\tera\electronvolt$
 	    \item $1.025 \mathrm{fb}^{-1}$
 	    \item result: $\SJPsi = 0.72 \pm 0.06 \text{(stat.)} \pm 0.04 \text{(syst.)}$
+	    \item world average: $\SJPsi = 0.679 \pm 0.020$
 	\end{itemize}
 	
 	Our data:
@@ -174,7 +173,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
     \end{center}
     \end{frame}        	
 	
-	\begin{frame}{nominal fit}{mass fit - parameterisation}
+	\begin{frame}{Mass fit}{Parameterisation}
 	\begin{block}{Signal}
 	\begin{align}
 \nonumber \mathcal{P}_{m;S}(m;\vec{\lambda}_{m;S}) = &f_{S,m}\mathcal{G}(m;m_{\text{\Bd}},\sigma_{m,1}) + \\
@@ -193,7 +192,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 \end{block}
 	\end{frame}
 	
-	\begin{frame}{nominal fit}{mass fit}
+	\begin{frame}{Mass fit}
 	\begin{columns}
 	\column{0.5\textwidth}
 	\begin{block}{Long Tracks}
@@ -206,11 +205,30 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\end{columns}
 	\end{frame}
 	
-	\begin{frame}{nominal fit}{decay time distribution - probability density function}
+	\begin{frame}{Decay time fit}{derivation of probability density function}
+    \begin{align}
+    \mathcal{P}^{true}(\text{\Bd / \Bdbar}) \propto \underbrace{(1\mp             \mu)}_{\text{asymmetric production}} \underbrace{e^{-t/\tau}\left[1\mp \SJPsi \sin(\Delta m_d t)\right]}_{\text{theoretical decay time distribution}}
+    \end{align}	
+    Imperfect tagging: \\
+    \begin{align}
+    \mathcal{P}^{meas}(\text{\Bd}) &\propto (1-\omega_{\text{\Bd}})\mathcal{P}^{true}(\text{\Bd}) + \omega_{\text{\Bdbar}} \mathcal{P}^{true}(\text{\Bdbar}) \\
+ \mathcal{P}^{meas}(\text{\Bdbar}) &\propto (1-\omega_{\text{\Bdbar}})\mathcal{P}^{true}(\text{\Bdbar}) + \omega_{\text{\Bd}} \mathcal{P}^{true}(\text{\Bd})
+    \end{align}
+
+    Combination of all effects and defining 
+    \begin{align}
+    \Delta p_0 &= \omega_{\text{\Bd}}-\omega_{\text{\Bdbar}} \\
+    \omega_{\text{\Bd}/\text{\Bdbar}} &= \omega \pm \frac{\Delta p_0}{2}
+    \end{align}
+	leads to...
+	\end{frame}
+	
+	\begin{frame}{Decay time fit}{probability density function used in fit}
 	\begin{align}
 \nonumber\mathcal{P}_{\text{meas}}(t, d, \omega) \propto &e^{-t/\tau} \left\lbrace 1-d\mu(1-2\omega)-d\Delta p_0 \right. \\
 &- \left.\left[d(1-2\omega)-\mu(1-d\Delta p_0)\right]\SJPsi\sin(\Delta m_d t)\right\rbrace
 	\end{align}
+	
 	
 	\begin{itemize}
 		\item d: tagging decision
@@ -226,7 +244,6 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 
 	\end{itemize}	
 	\end{frame}
-	
 	
 	
 	\begin{frame}{Fit results}
@@ -263,7 +280,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\hline \hline
 	\text{Parameter} & \multicolumn{2}{c}{\text{long}} & \multicolumn{2}{c}{\text{downstream}}\\ \hline
 	\SJPsi (\text{blinded})    & & & 0.565 & 0.069 \\
-	\tau       & & & 1.516 & 0.039 \\
+	\tau_{\text{eff}}       & & & 1.516 & 0.039 \\
 	\Delta m_d & & & 0.521 & 0.039 \\
 	\hline
 	\end{array}$
@@ -273,7 +290,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	
 	\begin{frame}{Systematic errors}
 	\begin{itemize}
-		\item Fit Bias due to fit method
+		\item Fit Bias due to fit method sFit
 	    \item Tagging calibration
 	    \item Time acceptance
 	    \item Correlation mass $\leftrightarrow$ decay time
