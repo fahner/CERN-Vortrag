@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.2)  28 JUL 2013 17:13
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.2)  29 JUL 2013 11:35
 entering extended mode
 **praesentation.tex
 (D:\Uni\Bachelorarbeit\CERN-Vortrag\praesentation.tex
@@ -1656,38 +1656,52 @@ Package pdftex.def Info: detector.jpg used on input line 106.
 
 ] [8
 
-] <resolution_ds.jpg, id=82, 287.8755pt x 416.757pt>
+] <resolution_lt.pdf, id=82, 502.87875pt x 739.76375pt>
+File: resolution_lt.pdf Graphic file (type pdf)
+
+<use resolution_lt.pdf>
+Package pdftex.def Info: resolution_lt.pdf used on input line 160.
+(pdftex.def)             Requested size: 141.35304pt x 207.93387pt.
+ <resolution_ds.jpg, id=83, 287.8755pt x 416.757pt>
 File: resolution_ds.jpg Graphic file (type jpg)
 
 <use resolution_ds.jpg>
-Package pdftex.def Info: resolution_ds.jpg used on input line 158.
-(pdftex.def)             Requested size: 153.64493pt x 222.43816pt.
+Package pdftex.def Info: resolution_ds.jpg used on input line 160.
+(pdftex.def)             Requested size: 145.9622pt x 211.31593pt.
 
-Overfull \vbox (18.75504pt too high) detected at line 158
+Overfull \vbox (7.63281pt too high) detected at line 160
  []
 
 [9
 
- <D:/Uni/Bachelorarbeit/CERN-Vortrag/resolution_ds.jpg>] [10
+ <D:/Uni/Bachelorarbeit/CERN-Vortrag/resolution_lt.pdf> <D:/Uni/Bachelorarbeit/
+CERN-Vortrag/resolution_ds.jpg>] [10
 
 ]
-Overfull \vbox (10.63763pt too high) detected at line 193
+Overfull \vbox (10.63763pt too high) detected at line 195
  []
 
 [11
 
-] <mass_fit_ds.pdf, id=102, 569.12625pt x 700.6175pt>
+] <mass_fit_lt.pdf, id=147, 569.12625pt x 700.6175pt>
+File: mass_fit_lt.pdf Graphic file (type pdf)
+ <use mass_fit_lt.pdf>
+Package pdftex.def Info: mass_fit_lt.pdf used on input line 208.
+(pdftex.def)             Requested size: 153.64493pt x 189.14787pt.
+
+<mass_fit_ds.pdf, id=148, 569.12625pt x 700.6175pt>
 File: mass_fit_ds.pdf Graphic file (type pdf)
  <use mass_fit_ds.pdf>
-Package pdftex.def Info: mass_fit_ds.pdf used on input line 206.
+Package pdftex.def Info: mass_fit_ds.pdf used on input line 208.
 (pdftex.def)             Requested size: 153.64493pt x 189.14787pt.
 
 [12
 
- <D:/Uni/Bachelorarbeit/CERN-Vortrag/mass_fit_ds.pdf>] [13
+ <D:/Uni/Bachelorarbeit/CERN-Vortrag/mass_fit_lt.pdf> <D:/Uni/Bachelorarbeit/CE
+RN-Vortrag/mass_fit_ds.pdf>] [13
 
 ]
-Overfull \hbox (0.2701pt too wide) in paragraph at lines 246--246
+Overfull \hbox (0.2701pt too wide) in paragraph at lines 248--248
 []  
  []
 
@@ -1695,37 +1709,51 @@ Overfull \hbox (0.2701pt too wide) in paragraph at lines 246--246
 
 ] [15
 
-] <decay_distribution_ds.pdf, id=172, 569.12625pt x 700.6175pt>
+] <decay_distribution_lt.pdf, id=261, 569.12625pt x 700.6175pt>
+File: decay_distribution_lt.pdf Graphic file (type pdf)
+
+<use decay_distribution_lt.pdf>
+Package pdftex.def Info: decay_distribution_lt.pdf used on input line 274.
+(pdftex.def)             Requested size: 153.64493pt x 189.14787pt.
+
+<decay_distribution_ds.pdf, id=262, 569.12625pt x 700.6175pt>
 File: decay_distribution_ds.pdf Graphic file (type pdf)
 
 <use decay_distribution_ds.pdf>
-Package pdftex.def Info: decay_distribution_ds.pdf used on input line 272.
+Package pdftex.def Info: decay_distribution_ds.pdf used on input line 274.
 (pdftex.def)             Requested size: 153.64493pt x 189.14787pt.
  [16
 
- <D:/Uni/Bachelorarbeit/CERN-Vortrag/decay_distribution_ds.pdf>] [17
+ <D:/Uni/Bachelorarbeit/CERN-Vortrag/decay_distribution_lt.pdf> <D:/Uni/Bachelo
+rarbeit/CERN-Vortrag/decay_distribution_ds.pdf>] [17
 
 ] [18
 
 ] [19
 
-]
-<fit_bias_ds.pdf, id=242, 502.87875pt x 739.76375pt>
-File: fit_bias_ds.pdf Graphic file (type pdf)
- <use fit_bias_ds.pdf>
-Package pdftex.def Info: fit_bias_ds.pdf used on input line 324.
+] <fit_bias_lt.pdf, id=375, 502.87875pt x 739.76375pt>
+File: fit_bias_lt.pdf Graphic file (type pdf)
+
+<use fit_bias_lt.pdf>
+Package pdftex.def Info: fit_bias_lt.pdf used on input line 326.
 (pdftex.def)             Requested size: 122.9164pt x 180.80911pt.
+ <fit_bias_ds.pdf, id=376, 502.87875pt x 739.76375pt>
+File: fit_bias_ds.pdf Graphic file (type pdf)
 
-[20
+<use fit_bias_ds.pdf>
+Package pdftex.def Info: fit_bias_ds.pdf used on input line 326.
+(pdftex.def)             Requested size: 122.9164pt x 180.80911pt.
+ [20
 
- <D:/Uni/Bachelorarbeit/CERN-Vortrag/fit_bias_ds.pdf>] [21
+ <D:/Uni/Bachelorarbeit/CERN-Vortrag/fit_bias_lt.pdf> <D:/Uni/Bachelorarbeit/CE
+RN-Vortrag/fit_bias_ds.pdf>] [21
 
 ]
-<fit_bias_statistics.pdf, id=299, 569.12625pt x 417.56pt>
+<fit_bias_statistics.pdf, id=476, 569.12625pt x 417.56pt>
 File: fit_bias_statistics.pdf Graphic file (type pdf)
 
 <use fit_bias_statistics.pdf>
-Package pdftex.def Info: fit_bias_statistics.pdf used on input line 367.
+Package pdftex.def Info: fit_bias_statistics.pdf used on input line 371.
 (pdftex.def)             Requested size: 215.10196pt x 157.82066pt.
  [22
 
@@ -1737,24 +1765,35 @@ Package pdftex.def Info: fit_bias_statistics.pdf used on input line 367.
 ] [25
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 419
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 423
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 419.
+LaTeX Font Info:    No file OMScmss.fd. on input line 423.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textperiodcentered' on input line 419.
+(Font)              for symbol `textperiodcentered' on input line 423.
 
 [26
 
-] [27
+] <time_acceptance_fit_lt.pdf, id=552, 569.12625pt x 417.56pt>
+File: time_acceptance_fit_lt.pdf Graphic file (type pdf)
 
-] <time_acceptance_fit_ds.pdf, id=381, 569.12625pt x 417.56pt>
+<use time_acceptance_fit_lt.pdf>
+Package pdftex.def Info: time_acceptance_fit_lt.pdf used on input line 430.
+(pdftex.def)             Requested size: 261.19826pt x 191.64665pt.
+
+Overfull \vbox (1.0927pt too high) detected at line 430
+ []
+
+[27
+
+ <D:/Uni/Bachelorarbeit/CERN-Vortrag/time_acceptance_fit_lt.pdf, page is rotate
+d 90 degrees>] <time_acceptance_fit_ds.pdf, id=603, 569.12625pt x 417.56pt>
 File: time_acceptance_fit_ds.pdf Graphic file (type pdf)
 
 <use time_acceptance_fit_ds.pdf>
-Package pdftex.def Info: time_acceptance_fit_ds.pdf used on input line 432.
+Package pdftex.def Info: time_acceptance_fit_ds.pdf used on input line 437.
 (pdftex.def)             Requested size: 261.19826pt x 191.64665pt.
  [28
 
@@ -1770,10 +1809,10 @@ d 90 degrees>] [29
 ] [33
 
 ]
-<asymmetry_ds.pdf, id=464, 569.12625pt x 419.5675pt>
+<asymmetry_ds.pdf, id=686, 569.12625pt x 419.5675pt>
 File: asymmetry_ds.pdf Graphic file (type pdf)
  <use asymmetry_ds.pdf>
-Package pdftex.def Info: asymmetry_ds.pdf used on input line 543.
+Package pdftex.def Info: asymmetry_ds.pdf used on input line 547.
 (pdftex.def)             Requested size: 153.64493pt x 113.27193pt.
 
 [34
@@ -1785,11 +1824,11 @@ es>] [35
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 566.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 566.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 570.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 570.
  (D:\Uni\Bachelorarbeit\CERN-Vortrag\praesentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 566.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 566.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 570.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 570.
 Package rerunfilecheck Info: File `praesentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1802,10 +1841,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 16748 strings out of 494045
- 312036 string characters out of 3148360
+ 16773 strings out of 494045
+ 312621 string characters out of 3148360
  386012 words of memory out of 3000000
- 19527 multiletter control sequences out of 15000+200000
+ 19547 multiletter control sequences out of 15000+200000
  20298 words of font info for 75 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  49i,18n,53p,403b,710s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1824,9 +1863,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmsy9.pfb>
-Output written on praesentation.pdf (35 pages, 826236 bytes).
+Output written on praesentation.pdf (35 pages, 993670 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
+ 809 PDF objects out of 1000 (max. 8388607)
  70 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 
