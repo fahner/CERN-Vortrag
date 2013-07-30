@@ -34,7 +34,7 @@
 \subtitle[]{}
 \author[Johannes Mayer, Patrick Fahner]{Johannes Mayer, Patrick Fahner}
 \institute[]{LHCb, Physikalisches Institut \\ Heidelberg University}
-\date[29/07/13]{29/07/2013}
+\date[08/08/13]{B2CC meeting \\ 08/08/2013}
 \subject{}
 \keywords{}
 
@@ -47,6 +47,10 @@
 	\begin{frame}{Decay $B_d^0 \longrightarrow J/\Psi K_s^0$ and $B_d^0-\bar{B}_d^0$-Mixing}
 	\includegraphics[width=0.5\textwidth]{Decay}
 	\includegraphics[width=0.5\textwidth]{Mixing}
+	\begin{center}
+	\vspace{1.2cm}
+	Measurement of $\mathcal{CP}$-Asymmetry $\mathcal{A_{CP}}$ due to interference between direct decay and decay after mixing
+	\end{center}
 	\end{frame}
 
 	
@@ -89,27 +93,15 @@
 	    \item only 2012 data
 	    \item $\sqrt{s} = 8\tera\electronvolt$
 	    \item $\approx 2 \mathrm{fb}^{-1}$
-   	    \item separation into long and downstream tracks
+   	    \item separation into long (Johannes) and downstream (Patrick) tracks
 	\end{itemize}
 	\end{frame}
-	
-	\begin{frame}{LHCb-detector}
-	\begin{center}
-	\includegraphics[width = 0.6\textwidth]{detector}
-	\end{center}
-	\begin{block}{Tracks}
-	\begin{itemize}
-		\item Long Tracks: VELO + T Stations (Johannes)
-		\item Downstream Tracks: TT + T Stations (Patrick)
-	\end{itemize}
-	\end{block}	
-	\end{frame}
-	
+
 	
 	\begin{frame}{Cuts}
     \begin{itemize}
     \item in general took from 2011 analysis
-    \item analysis on detached and biased trigger line
+    \item analysis on stripping line \texttt{BetaSBd2JpsiKsDetachedLine} and HLT2 line \texttt{Hlt2DiMuonDetachedJPsiDecision}
 	\item New in 2012: Ghost probability. We choose ghost prob $<0.5$ for $\pi$ and $\mu$ tracks.
 	\end{itemize}
 	\end{frame}
@@ -117,15 +109,12 @@
 	\begin{frame}{Fit strategy}
 	\begin{itemize}
 	\item Unbinned Maximum Likelihood Fit
-	\item sFit: Maximise modified likelihood function
-	\begin{align}
-	\mathcal{L}_W(\vec{\lambda}) = \prod_{i=1}^N \mathcal{P}(\vec{x_e};\vec{\lambda})^{W_s(y_e)}
-	\end{align}
-	\item sWeigths $W_s(y_e)$ calculated with sPlot-technique
+	\item sFit
 	\item total decay time p.d.f.
 	\begin{align}
 	\mathcal{P}_{meas} = \underbrace{\epsilon(t)}_{= 1,\ \text{later more}}\mathcal{P}_{sig}(t') \otimes \mathcal{R}(t-t')
 	\end{align}
+	\item neglect decay time acceptance, examination of systematic effect later
 	\end{itemize}
 	\end{frame}
 	
@@ -169,8 +158,9 @@
 \sigma_{1}\hspace{1cm}(\text{ps}) &	0.117 & 0.016 & 0.480 & 0.070\\
 \sigma_{2}\hspace{1cm}(\text{ps}) &	0.061 & 0.037 & 0.04396 & 0.00094\\
 \sigma_{3}\hspace{1cm}(\text{ps}) &0.037 &	0.003 & 0.0932 & 0.0034 \\
-f_{1} &0.054 & 0.032 & 0.00329 & 0.00099\\
-f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
+f_{1} & 0.054 & 0.032 & 0.00329 & 0.00099\\
+f_{2} & 0.294 & 0.138 & 0.739 & 0.027\\ \hline 
+\sigma_{eff} & & & 0.00665 & 0.0047 \\ \hline \hline
 \end{array}$   
     \end{center}
     \end{frame}        	
@@ -207,31 +197,12 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\end{columns}
 	\end{frame}
 	
-	\begin{frame}{Decay time fit}{derivation of probability density function}
-    \begin{align}
-    \mathcal{P}^{true}(\text{\Bd / \Bdbar}) \propto \underbrace{(1\mp             \mu)}_{\text{asymmetric production}} \underbrace{e^{-t/\tau}\left[1\mp \SJPsi \sin(\Delta m_d t)\right]}_{\text{theoretical decay time distribution}}
-    \end{align}	
-    Imperfect tagging: \\
-    \begin{align}
-    \mathcal{P}^{meas}(\text{\Bd}) &\propto (1-\omega_{\text{\Bd}})\mathcal{P}^{true}(\text{\Bd}) + \omega_{\text{\Bdbar}} \mathcal{P}^{true}(\text{\Bdbar}) \\
- \mathcal{P}^{meas}(\text{\Bdbar}) &\propto (1-\omega_{\text{\Bdbar}})\mathcal{P}^{true}(\text{\Bdbar}) + \omega_{\text{\Bd}} \mathcal{P}^{true}(\text{\Bd})
-    \end{align}
-
-    Combination of all effects and defining 
-    \begin{align}
-    \Delta p_0 &= \omega_{\text{\Bd}}-\omega_{\text{\Bdbar}} \\
-    \omega_{\text{\Bd}/\text{\Bdbar}} &= \omega \pm \frac{\Delta p_0}{2}
-    \end{align}
-	leads to...
-	\end{frame}
 	
 	\begin{frame}{Decay time fit}{probability density function used in fit}
 	\begin{align}
 \nonumber\mathcal{P}_{\text{meas}}(t, d, \omega) \propto &e^{-t/\tau} \left\lbrace 1-d\mu(1-2\omega)-d\Delta p_0 \right. \\
 &- \left.\left[d(1-2\omega)-\mu(1-d\Delta p_0)\right]\SJPsi\sin(\Delta m_d t)\right\rbrace
-	\end{align}
-	
-	
+	\end{align}	
 	\begin{itemize}
 		\item d: tagging decision
 		\item $\mu = A_P = \frac{R_{\bar{B}_d^0}-R_{B_d^0}}{R_{\bar{B}_d^0}+R_{B_d^0}}$ production asymmetry
@@ -253,8 +224,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 		\item floating parameters: $S_{J/\Psi K_s^0}$, $\tau$, $\Delta m_d$
 		\item constrained parameters: $\mu = -0.015\pm0.013$, $p_0 = 0.382\pm0.003$, $p_1=0.981\pm0.024$, $\Delta p_0 = 0.0045\pm0.0053$
 		\item fixed parameters: $\left\langle \eta^{OS} \right\rangle = 0.382$, resolution parameters
-		\item total events: 6654 (long) // 12689 (downstream)
-		\item signal events: 5104 (long) // 8585 (downstream) [2011: 8600 total]
+		\item tagged signal events: 5104 (long) // 8585 (downstream) [2011: 8600 total]
 	\end{itemize}
 	\end{frame}
 
@@ -283,10 +253,13 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\text{Parameter} & \multicolumn{2}{c}{\text{long}} & \multicolumn{2}{c}{\text{downstream}}\\ \hline
 	\SJPsi (\text{blinded})    & 0.610 & 0.078 & 0.565 & 0.069 \\
 	\tau_{\text{eff}}       & 1.355 & 0.021 & 1.516 & 0.039 \\
-	\Delta m_d & 0.0601 & 0.045 & 0.521 & 0.039 \\
+	\Delta m_d & 0.601 & 0.045 & 0.521 & 0.039 \\
 	\hline
 	\end{array}$
 	\end{center}
+	\begin{alert}{Question:}
+	Why is $\Delta m_d$ that much higher in the long track sample?
+	\end{alert}
 	\end{frame}
 
 	
@@ -305,7 +278,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 	\begin{itemize}
 	\item 6700 (long) resp. 13000 events (downstream)
 	\item $\SJPsi = 0.72$ (long), $\SJPsi = 0.75$ (downstream)
-	\item all other parameters derived from nominal fit
+	\item all other parameters derived from data fit
 	\item $\SJPsi$, $\tau$, $\Delta m_d$ floating
 	\end{itemize}
     \end{frame}	
@@ -418,7 +391,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
     $\mathcal{P}_{acc}(t) \propto \underbrace{e^{-t/\tau}}_{\text{exp. decay}} \cdot \underbrace{\frac{2}{\pi}\arctan[t\cdot \exp(at+b)]}_{\text{turn-on-effect}} \cdot \underbrace{(1 + \beta t)}_{\substack{\text{higher lifetimes} \\(\beta<0)}}$
     \end{block}
     \begin{alert}{Note:}
-    $\tau$ will be constrained to the PDG value $\tau = 1,519 \pm 0,007 \pico\second$.
+    $\tau$ will be constrained to the PDG value $\tau = 1.519 \pm 0.007 \pico\second$.
     \end{alert}
 \end{frame}
 
@@ -441,7 +414,7 @@ f_{2} &0.294 & 0.138 & 0.739 & 0.027\\ \hline \hline
 \caption{Fit results for exponential decay fit with acceptance function. $\tau$ was constrained to the PDG value $\tau = 1,519 \pm 0,007 \pico\second$}
 \begin{tabular}{lr@{$\pm$}l r@{$\pm$}l}
 \hline \hline 
-parameter & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{long} \\ \hline
+parameter & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{downstream} \\ \hline
 $\tau$    & 1.518 & 0.007 & 1.519 & 0.007 \\
 $a$       & 153 & 36 & 52.8 & 8.6 \\
 $b$       & -31.44 & 7.7 & -9.2 & 1.6 \\
@@ -478,7 +451,7 @@ Assignment of systematic error due to neglect of any time acceptance:
 \end{frame}
 
 \begin{frame}{Systematic errors}{Correlation mass $\leftrightarrow$ decay time}
-Fit reconstructed \Bd-mass in different time bins. Fix mass parameters to the ones obtained in 1 bin and fit $\SJPsi$ in the whole sample. Choose signal weighted rms of $\SJPsi$ differences to fit bias toy as estimate.
+Fit reconstructed \Bd-mass in different time bins. Fix mass parameters to the ones obtained in 1 bin and fit $\SJPsi$ in the whole sample.
 \begin{center}
 \begin{tabular}{c l r@{$\pm$}l r@{$\pm$}l}
 \hline \hline
@@ -549,19 +522,76 @@ total & 0.089 & 0.095 \\
 
 \begin{frame}{Conclusion}{Comparison with other results}
 \begin{center}
-\begin{tabular}{l r@{$\pm$}l}
+\begin{tabular}{l r@{$\pm$}c@{}l}
 \hline \hline
-& \multicolumn{2}{c}{$\SJPsi$} \\ \hline
-long tracks (blinded) & 0.610 & 0.078 \\
-downstream tracks (blinded) & 0.565 & 0.069 \\ \hline
-2011 analysis & 0.72 & 0.06 \\
-world average & 0.679 & 0.020 \\
-BaBar (most precise) & 0.687 & 0.028 \\ \hline \hline
+& \multicolumn{3}{c}{$\SJPsi$} \\ \hline
+long tracks (blinded) & 0.610 & 0.078 & $\pm$\\
+downstream tracks (blinded) & 0.565 & 0.069 & $\pm$\\ \hline
+combined & & &$\pm$ \\ \hline
+2011 analysis & 0.72 & 0.06 &$\pm$0.04\\
+world average & 0.679 & 0.020 &\\
+BaBar (most precise) & 0.687 & 0.028 &$\pm$0.012 \\ \hline \hline
 \end{tabular}
 \end{center}
 \end{frame}
 
+\begin{frame}
+\begin{center}
+BACKUP
+\end{center}
+\end{frame}
 
+	
+	\begin{frame}{LHCb-detector}
+	\begin{center}
+	\includegraphics[width = 0.6\textwidth]{detector}
+	\end{center}
+	\begin{block}{Tracks}
+	\begin{itemize}
+		\item Long Tracks: VELO + T Stations (Johannes)
+		\item Downstream Tracks: TT + T Stations (Patrick)
+	\end{itemize}
+	\end{block}	
+	\end{frame}
+	
+		\begin{frame}{Decay time fit}{derivation of probability density function}
+    \begin{align}
+    \mathcal{P}^{true}(\text{\Bd / \Bdbar}) \propto \underbrace{(1\mp             \mu)}_{\text{asymmetric production}} \underbrace{e^{-t/\tau}\left[1\mp \SJPsi \sin(\Delta m_d t)\right]}_{\text{theoretical decay time distribution}}
+    \end{align}	
+    Imperfect tagging: \\
+    \begin{align}
+    \mathcal{P}^{meas}(\text{\Bd}) &\propto (1-\omega_{\text{\Bd}})\mathcal{P}^{true}(\text{\Bd}) + \omega_{\text{\Bdbar}} \mathcal{P}^{true}(\text{\Bdbar}) \\
+ \mathcal{P}^{meas}(\text{\Bdbar}) &\propto (1-\omega_{\text{\Bdbar}})\mathcal{P}^{true}(\text{\Bdbar}) + \omega_{\text{\Bd}} \mathcal{P}^{true}(\text{\Bd})
+    \end{align}
+
+    Combination of all effects and defining 
+    \begin{align}
+    \Delta p_0 &= \omega_{\text{\Bd}}-\omega_{\text{\Bdbar}} \\
+    \omega_{\text{\Bd}/\text{\Bdbar}} &= \omega \pm \frac{\Delta p_0}{2}
+    \end{align}
+	leads to...
+	\end{frame}
+	
+	\begin{frame}{Decay time fit}{probability density function used in fit}
+	\begin{align}
+\nonumber\mathcal{P}_{\text{meas}}(t, d, \omega) \propto &e^{-t/\tau} \left\lbrace 1-d\mu(1-2\omega)-d\Delta p_0 \right. \\
+&- \left.\left[d(1-2\omega)-\mu(1-d\Delta p_0)\right]\SJPsi\sin(\Delta m_d t)\right\rbrace
+	\end{align}
+	\begin{itemize}
+		\item d: tagging decision
+		\item $\mu = A_P = \frac{R_{\bar{B}_d^0}-R_{B_d^0}}{R_{\bar{B}_d^0}+R_{B_d^0}}$ production asymmetry
+		\item $\omega$: calibrated mistag probability
+		      \begin{align}
+		      \omega(\eta^{OS}) = p_1 (\eta^{OS} - \left\langle \eta^{OS} \right\rangle) + p_0
+		      \end{align}
+		      $p_0, p_1$: calibration parameters \\
+		      $\eta^{OS}$: predicted mistag probability
+		\item $\Delta p_0$: tagging calibration asymmetry
+		\item $\Delta m_d$: mixing frequency
+
+	\end{itemize}	
+	\end{frame}
+	
 
 % Backup-Folien
 % =============
