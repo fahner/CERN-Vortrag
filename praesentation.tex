@@ -32,7 +32,7 @@
 
 \title[Measurement of $\sin(2\beta)$]{Measurement of $\sin(2\beta)$ in the decay $B_d^0 \longrightarrow J/\Psi K_s^0$}
 \subtitle[]{}
-\author[Johannes Mayer, Patrick Fahner]{Johannes Mayer, Patrick Fahner}
+\author[Johannes Mayer, Patrick Fahner, Thomas Nikodem]{Johannes Mayer, Patrick Fahner, Thomas Nikodem}
 \institute[]{LHCb, Physikalisches Institut \\ Heidelberg University}
 \date[08/08/13]{B2CC meeting \\ 08/08/2013}
 \subject{}
@@ -42,6 +42,27 @@
 \setlength\abovedisplayskip{0pt}
 	\begin{frame}[plain]
 	\titlepage
+	\end{frame}
+	
+	\begin{frame}{Outline}
+	\begin{enumerate}
+	\item Theoretical introduction
+	\item nominal Fit
+	    \begin{itemize}
+	    \item Strategy
+	    \item Mass fit
+	    \item Decay time fit
+	    \end{itemize}
+	\item Systematic studies
+		\begin{itemize}
+		\item Fit Bias due to fit method sFit
+	    \item Tagging calibration
+	    \item Time acceptance
+	    \item Correlation mass $\leftrightarrow$ decay time
+	    \item Time resolution
+    	\end{itemize}
+	\item Conclusion
+	\end{enumerate}
 	\end{frame}
 	
 	\begin{frame}{Decay $B_d^0 \longrightarrow J/\Psi K_s^0$ and $B_d^0-\bar{B}_d^0$-Mixing}
@@ -108,15 +129,19 @@
 	\end{frame}
 	
 	\begin{frame}{Comparison 2011 $\leftrightarrow$ 2012}
+	\begin{center}
 	\begin{tabular}{l c c c}
 	\hline \hline 
-	 & 2011 & long tracks & downstream tracks \\ \hline
+	 & 2011 & long & downstream \\ \hline
 	 candidates & 50186 & 21183 & 62184 \\
 	 signal & 26775 & 17003 & 42907 \\
 	 tagged signal & 8600 & 5116 & 12626 \\ 
 	 $\epsilon_{tag}$ & $(32.65 \pm 0.31)\%$ &$(30.09\pm 0.57)\%$ & $(29.43\pm 0.85)\%$ \\
-	 $\epsilon_{eff}= \epsilon_{tag}\mathcal{D}^2$ & $(2.38 \pm 0.27)\%$ & $(1.78 \pm xxx)\%$ & $(1.80\pm 0.15)\%$ \\ \hline
+	 $\epsilon_{eff}= \epsilon_{tag}\mathcal{D}^2$ & $(2.38 \pm 0.27)\%$ & $(1.78 \pm xxx)\%$ & $(1.80\pm 0.15)\%$ \\ \hline \hline
 	\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	Used tagging: FlavourTagging v13r0 2013-06-13 (only OST)
 	\end{frame}
 	
 	\begin{frame}{Fit strategy}
@@ -141,7 +166,7 @@
 	\item Use prescaled trigger line
 	\item apply all cuts except lifetime cut
 	\item Perform sFit with reonstructed $J/\Psi$ mass as discriminating variable
-	\item fit only negative decay times (unphysical, explainable only with resolution effects)
+	\item fit only negative decay times (unphysical, explainable only with resolution effects) ($\rightarrow$ approximation, but sufficient for our purpose)
 	\end{itemize}
 	\end{frame}
 	
@@ -173,7 +198,7 @@
 \sigma_{3}\hspace{1cm}(\text{ps}) &0.037 &	0.003 & 0.04396 & 0.00094  \\
 f_{1} & 0.054 & 0.032 & 0.00329 & 0.00099\\
 f_{2} & 0.294 & 0.138 & 0.257 & 0.027\\ \hline 
-\sigma_{eff}\hspace{1cm}(\text{ps}) & & & 0.00665 & 0.0047 \\ \hline \hline
+\sigma_{eff}\hspace{0.95cm}(\text{ps}) & 0.052 & 0.012 & 0.0665 & 0.0013 \\ \hline \hline
 \end{array}$   
     \end{center}
     \end{frame}        	
@@ -255,7 +280,7 @@ f_{2} & 0.294 & 0.138 & 0.257 & 0.027\\ \hline
 
 	\end{frame}
 	
-	\begin{frame}{fit results}
+	\begin{frame}{Fit results}
 	\begin{alert}{Note:}
 	Both results of $\SJPsi$ are blinded with the same string.
 	\end{alert}
@@ -272,8 +297,8 @@ f_{2} & 0.294 & 0.138 & 0.257 & 0.027\\ \hline
 	\end{array}$
 	\end{center}
     \begin{alert}{Note:}
-	$\tau_{eff}$ not compatible to PDG values due to neglect of acceptance and biased trigger lines
-	\end{alert}
+	$\tau_{eff}$ not compatible to PDG value due to neglect of time acceptance in fit (systematic study later)
+	\end{alert} \\
 	\begin{alert}{Question:}
 	Why is $\Delta m_d$ that much higher in the long track sample?
 	\end{alert}
@@ -305,7 +330,7 @@ f_{2} & 0.294 & 0.138 & 0.257 & 0.027\\ \hline
 	\column{0.5\textwidth}
 	\begin{block}{Long Tracks}
 	\centering
-	\includegraphics[width=0.8\textwidth]{fit_bias_lt}	
+	\includegraphics[width=\textwidth]{fit_bias_lt}	
 	\end{block}
 	\column{0.5\textwidth}
 	\begin{block}{Downstream Tracks}
@@ -335,48 +360,51 @@ f_{2} & 0.294 & 0.138 & 0.257 & 0.027\\ \hline
     \end{block}
     \end{columns}
 	\vspace{0.5cm} 
-	Multiply mean $\mu_{\text{pull}}$ of pull distribution with statistical uncertainty of nominal fit.
+	Multiply mean $\mu_{\text{pull}}$ of pull distribution with statistical uncertainty of nominal fit (long: $\sigma_{\text{data}}=0.078$, down: $\sigma_{\text{data}}=0.063$).
 	\begin{columns}
 	\column{0.5\textwidth}
 	\begin{block}{Long Tracks}
     \centering
-        $\delta\SJPsi^{\text{Fit}} = 0.0066$
+        $\delta\SJPsi^{\text{Fit}} = 0.0066\ (8.5\%)$
     \end{block}
     	\column{0.5\textwidth}
 	\begin{block}{Downstream Tracks}
     \centering
-        $\delta\SJPsi^{\text{Fit}} = 0.0033$
+        $\delta\SJPsi^{\text{Fit}} = 0.0033\ (5.2\%)$
     \end{block}
     \end{columns}
+    \vspace{0.5cm}
+    (in Brackets: systematic error relative to systematic)
     \end{frame}
 	
 	\begin{frame}{Systematic errors}{Fit Bias - origins}
     \begin{itemize}
+      \item major contribution to bias: too little statistics
+      \begin{center}
+    \includegraphics[width = 0.6\textwidth]{fit_bias_statistics}
+    \end{center}
     \item too small pull width due to background ($\rightarrow$ overestimation of fit error)
-    \item major contribution to bias: too little statistics
     \item $\sigma_{\text{pull}}$ doesn't change with higher statistics
     \end{itemize}
-    \begin{center}
-    \includegraphics[width = 0.7\textwidth]{fit_bias_statistics}
-    \end{center}
+    
     \end{frame}
 	
 	\begin{frame}{Systematic errors}{Tagging calibration}
 	Vary Tagging calibration parameters $p_0, p_1$ $\pm$ their systematic uncertainties
 	\begin{enumerate}
-	\item in the nominal fit
+	\item in the nominal fit (gives first impression of size of effect)
 	\item in the generation of Toy MC, but fit with original values
 	\end{enumerate}
 	\begin{alert}{Note:}
-	Systematic studies on used tagging calibration hasn't finished yet $\longrightarrow$ no official value. Use systematic errors of 2011:
+	Systematic studies on used tagging calibration hasn't finished yet $\longrightarrow$ no official value. Use systematic errors of 2011 (to get a feeling for size of effect, need to be redone with final calibration):
 	\begin{align*}
 	\delta p_0^{stat.} = 0.0076, \qquad \delta p_1^{stat.} = 0.0012
 	\end{align*}
 	\end{alert}
-	Choose highest difference from nominal fit / toy as estimate for the systematic uncertainty
+	Choose highest difference from nominal fit bias toy as estimate for the systematic uncertainty
 	\begin{itemize}
-	\item Long tracks: $\delta\SJPsi^{\text{TagCalib}} = 0.0320$
-	\item Downstream tracks: $\delta\SJPsi^{\text{TagCalib}} = 0.0331$
+	\item Long tracks: $\delta\SJPsi^{\text{TagCalib}} = 0.0320\ (41.0\%)$
+	\item Downstream tracks: $\delta\SJPsi^{\text{TagCalib}} = 0.0331\ (52.5\%)$
     \end{itemize}		    
     \end{frame}
     
@@ -442,7 +470,7 @@ Toy MC Study
 \item generate with acceptance function 
 \item use parameters mentioned above
 \item fit without acceptance function
-\item compare mean of $\SJPsi$ distribution with cooresponding mean of fit bias toy
+\item compare mean of $\SJPsi$ distribution with corresponding mean of fit bias toy
 \end{itemize}
 
 Assignment of systematic error due to neglect of any time acceptance:
@@ -450,12 +478,12 @@ Assignment of systematic error due to neglect of any time acceptance:
 	\column{0.5\textwidth}
 	\begin{block}{Long Tracks}
     \centering
-        $\delta\SJPsi^{\text{Acc}} = 0.0003$
+        $\delta\SJPsi^{\text{Acc}} = 0.0003\ (0.4\%)$
     \end{block}
     	\column{0.5\textwidth}
 	\begin{block}{Downstream Tracks}
     \centering
-        $\delta\SJPsi^{\text{Acc}} = 0.0008$
+        $\delta\SJPsi^{\text{Acc}} = 0.0008\ (1.3\%)$
     \end{block}
     \end{columns}
 
@@ -473,7 +501,7 @@ Bin & time range of mass fit & \multicolumn{2}{c}{long} & \multicolumn{2}{c}{dow
 3 & $t \in [1.5, 3] \pico\second$ & 0.609 & 0.079 & 0.536 & 0.063 \\
 4 & $t \in [3, 14] \pico\second$ & 0.609 & 0.078 & 0.535 & 0.062 \\ \hline
 \multicolumn{2}{l}{nominal fit}  & 0.610 & 0.078 & 0.534 & 0.063 \\ \hline
-\multicolumn{2}{l}{$\delta\SJPsi^{\text{mass/t}}$} & \multicolumn{2}{c}{0.0020} & \multicolumn{2}{c}{0.0018} \\
+\multicolumn{2}{l}{$\delta\SJPsi^{\text{mass/t}}$} & \multicolumn{2}{c}{0.0020\ (2.6\%)} & \multicolumn{2}{c}{0.0018\ (2.9\%)} \\
 
 \hline \hline
 \end{tabular}
@@ -489,7 +517,7 @@ Vary $\sigma_i$ of resolution $\pm 20\%$, fit with these parameters and compare 
 $+20\%$ &0.6100 & 0.0782& 0.5351 & 0.0626 \\
 $-20\%$ & 0.6095 & 0.0782 & 0.5345 & 0.0625 \\ \hline
 nominal fit & 0.6098 & 0.0782 & 0.5347 & 0.0626 \\ \hline
-$\delta\SJPsi^{\text{resolution}}$ & \multicolumn{2}{c}{0.0003} & \multicolumn{2}{c}{0.0004} \\
+$\delta\SJPsi^{\text{resolution}}$ & \multicolumn{2}{c}{0.0003\ (0.4\%)} & \multicolumn{2}{c}{0.0004\ (0.6\%)} \\
 \hline \hline
 \end{tabular}
 \end{center}
@@ -498,16 +526,16 @@ $\delta\SJPsi^{\text{resolution}}$ & \multicolumn{2}{c}{0.0003} & \multicolumn{2
 
 \begin{frame}{Systematic errors}{Summary}
 \begin{center}
-\begin{tabular}{l c c}
+\begin{tabular}{l |c r | c r}
 \hline \hline
-effect & long & downstream \\ \hline
-fit  method & 0.0066 & 0.0033\\
-tagging calibration & 0.0320 & 0.0331\\
-time acceptance & 0.0003 & 0.0008\\
-mass $\leftrightarrow$ decay time & 0.0020 & 0.0018 \\
-resolution & 0.0003 & 0.0004 \\ \hline
-total & 0.0328 & 0.0333 \\
-\hline \hline
+effect & \multicolumn{2}{c|}{long} & \multicolumn{2}{c}{downstream} \\ \hline
+fit  method & 0.0066 & (8.5\%) & 0.0033 & (5.2\%)\\
+tagging calibration & 0.0320 & (42.0\%) & 0.0331 & (52.5\%)\\
+time acceptance & 0.0003 & (0.4\%) & 0.0008 & (1.3\%)\\
+mass $\leftrightarrow$ decay time & 0.0020 & (2.6\%) & 0.0018 & (2.9\%)\\
+resolution & 0.0003 & (0.4\%) & 0.0004 & (0.6\%)\\ \hline
+total & 0.0328 & (42.1\%) & 0.0333 & (52.9\%)\\ \hline
+statistic uncertainty & 0.0782 & & 0.0626 & \\ \hline \hline
 \end{tabular}
 \end{center}
 \end{frame}
@@ -528,7 +556,7 @@ total & 0.0328 & 0.0333 \\
 	$\SJPsi = 0.535 \pm 0.059 (\text{stat.}) \pm 0.033 (\text{syst.})$
 	\end{columns}
     \begin{center}
-    Both results are blinded with the same string
+    Both results are blinded with the same string. Systematic errors are corrected with $\sigma_{\text{pull}}$ of fit bias toy.
     \end{center}
 \end{frame}
 
@@ -537,9 +565,9 @@ total & 0.0328 & 0.0333 \\
 \begin{tabular}{l r@{$\pm$}c@{}l}
 \hline \hline
 & \multicolumn{3}{c}{$\SJPsi$} \\ \hline
-long tracks (blinded) & 0.610 & 0.074 & 0.033$\pm$ 0.033\\
-downstream tracks (blinded) & 0.565 & 0.059 & $\pm$ 0.033\\ \hline
-combined & xxx & 0.046&$\pm$ 0.023 \\ \hline
+long tracks (blinded) & 0.610 & 0.074 &$\pm$0.033\\
+downstream tracks (blinded) & 0.565 & 0.059 &$\pm$0.033\\ \hline
+combined & xxx & 0.046&$\pm$0.033 \\ \hline
 2011 analysis & 0.72 & 0.06 &$\pm$0.04\\
 world average & 0.679 & 0.020 &\\
 BaBar (most precise) & 0.687 & 0.028 &$\pm$0.012 \\ \hline \hline
